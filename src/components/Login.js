@@ -1,15 +1,30 @@
 import styled from 'styled-components';
+import { COLORS } from 'colors';
+import Heading from 'components/Heading';
 import Label from 'components/Label';
 import InputText from 'components/InputText';
 import Button from 'components/Button';
+import Link from 'components/Link';
 
-const Modal = styled.div``;
+const Window = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 4em 2em;
+  border: solid 1px ${COLORS.WHITE};
+`;
 
 const Login = () => {
   return (
     <main>
-      <Modal>
-      </Modal>
+      <Window>
+        <Heading addStyle="margin-bottom: 1em;">hello mah prend</Heading>
+        <Label>Username</Label>
+        <InputText addStyle="margin-bottom: 1em" />
+        <Label>Password</Label>
+        <InputText addStyle="margin-bottom: .5em" />
+        <Link to="/register">Forgot your password?</Link>
+        <Button addStyle="margin-top: 1em">Login</Button>
+      </Window>
     </main>
   );
 };
