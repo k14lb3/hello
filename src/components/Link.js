@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { COLORS } from 'colors';
 
 const StyledLink = styled(ReactLink)`
-  color: ${COLORS.WHITE};
+  color: ${COLORS.GREEN};
   text-decoration: none;
   &:hover {
     text-decoration: underline;
