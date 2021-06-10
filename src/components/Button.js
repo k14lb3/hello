@@ -10,6 +10,9 @@ const StyledButton = styled.button`
   font-size: inherit;
   cursor: pointer;
   ${(props) => props.addStyle}
+  &:hover {
+    background-color: ${COLORS.WHITEY};
+  }
 `;
 
 const Button = ({ children, ...rest }) => {
