@@ -5,6 +5,7 @@ import { COLORS } from 'colors';
 const StyledLink = styled(ReactLink)`
   color: ${COLORS.GREEN};
   text-decoration: none;
+  transition-duration: 200ms;
   &:hover {
     text-decoration: underline;
   }
