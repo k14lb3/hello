@@ -22,11 +22,13 @@ const Login = () => {
         <InputText addStyle="margin-bottom: 1em" />
         <Label>Password</Label>
         <InputText addStyle="margin-bottom: .5em" />
-        <Link to="/">Forgot your password?</Link>
+        <span>
+          <Link to="/">Forgot your password?</Link>
+        </span>
         <Button addStyle="margin-top: 1em; margin-bottom: 0.5em;">Login</Button>
-        <p>
+        <span>
           Need an account? <Link to="/register">Register</Link>
-        </p>
+        </span>
       </Window>
     </main>
   );

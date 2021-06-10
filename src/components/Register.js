@@ -26,7 +26,9 @@ const Register = () => {
         <Label>Password</Label>
         <InputPassword addStyle="margin-bottom: 1em" />
         <Button addStyle="margin-bottom: 0.5em;">Register</Button>
-        <Link to="/login">Already have an account?</Link>
+        <span>
+          <Link to="/login">Already have an account?</Link>
+        </span>
       </Window>
     </main>
   );
