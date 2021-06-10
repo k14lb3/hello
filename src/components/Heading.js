@@ -1,26 +1,33 @@
 import styled from 'styled-components';
+import { COLORS } from 'colors';
 
 const H1 = styled.h1`
+  color: ${COLORS.GREEN};
   ${(props) => props.addStyle}
 `;
 
 const H2 = styled.h2`
+  color: ${COLORS.GREEN};
   ${(props) => props.addStyle}
 `;
 
 const H3 = styled.h3`
+  color: ${COLORS.GREEN};
   ${(props) => props.addStyle}
 `;
 
 const H4 = styled.h4`
+  color: ${COLORS.GREEN};
   ${(props) => props.addStyle}
 `;
 
 const H5 = styled.h5`
+  color: ${COLORS.GREEN};
   ${(props) => props.addStyle}
 `;
 
 const H6 = styled.h6`
+  color: ${COLORS.GREEN};
   ${(props) => props.addStyle}
 `;
 
