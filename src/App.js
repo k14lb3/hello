@@ -1,8 +1,10 @@
+import SignIn from 'components/SignIn/SignIn';
+
 function App() {
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <>
+      <SignIn />
+    </>
   );
 }
 
