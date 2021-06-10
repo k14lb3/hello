@@ -18,16 +18,16 @@ const Register = () => {
   return (
     <main>
       <Window>
-        <Heading addStyle="margin-bottom: 1em;">Create an account</Heading>
-        <Label>Email</Label>
+        <Heading addStyle="margin-bottom: 1em;">create an account</Heading>
+        <Label>email</Label>
         <InputText addStyle="margin-bottom: 1em" />
-        <Label>Username</Label>
+        <Label>username</Label>
         <InputText addStyle="margin-bottom: 1em" />
-        <Label>Password</Label>
+        <Label>password</Label>
         <InputPassword addStyle="margin-bottom: 1em" />
-        <Button addStyle="margin-bottom: 0.5em;">Register</Button>
+        <Button addStyle="margin-bottom: 0.5em;">register</Button>
         <span>
-          <Link to="/login">Already have an account?</Link>
+          <Link to="/login">already have an account?</Link>
         </span>
       </Window>
     </main>

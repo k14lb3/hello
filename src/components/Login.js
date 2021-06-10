@@ -18,16 +18,16 @@ const Login = () => {
     <main>
       <Window>
         <Heading addStyle="margin-bottom: 1em;">hello mah prend</Heading>
-        <Label>Username</Label>
+        <Label>username</Label>
         <InputText addStyle="margin-bottom: 1em" />
-        <Label>Password</Label>
+        <Label>password</Label>
         <InputText addStyle="margin-bottom: .5em" />
         <span>
-          <Link to="/">Forgot your password?</Link>
+          <Link to="/">forgot your password?</Link>
         </span>
-        <Button addStyle="margin-top: 1em; margin-bottom: 0.5em;">Login</Button>
+        <Button addStyle="margin-top: 1em; margin-bottom: 0.5em;">login</Button>
         <span>
-          Need an account? <Link to="/register">Register</Link>
+          need an account? <Link to="/register">register</Link>
         </span>
       </Window>
     </main>
