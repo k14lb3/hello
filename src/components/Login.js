@@ -9,7 +9,7 @@ import Link from 'components/Link';
 const Window = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 4em 2em;
+  padding: 2em;
   border: solid 1px ${COLORS.WHITE};
 `;
 
