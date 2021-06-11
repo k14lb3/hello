@@ -9,9 +9,9 @@ function App() {
       <BrowserRouter>
         <AuthProvider>
           <Switch>
-            <Route path="/register" children={Register} />
-            <Route path="/login" children={Login} />
-            <Route children={() => <Redirect to="/login" />} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
+            <Route component={() => <Redirect to="/login" />} />
           </Switch>
         </AuthProvider>
       </BrowserRouter>
