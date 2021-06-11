@@ -8,6 +8,13 @@ const StyledInputText = styled.input`
   border: solid 1px ${COLORS.WHITE};
   color: ${COLORS.WHITE};
   font-size: inherit;
+  outline: none;
+  transition-duration: 200ms;
+
+  &:focus {
+    border-color: ${COLORS.GREEN};
+  }
+
   ${(props) => props.addStyle}
 `;
 
