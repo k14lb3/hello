@@ -1,4 +1,6 @@
+import { useRef } from 'react';
 import styled from 'styled-components';
+import { useAuth } from 'contexts/AuthContext';
 import { COLORS } from 'colors';
 import Heading from 'components/Heading';
 import Label from 'components/Label';
@@ -15,17 +17,33 @@ const Window = styled.div`
 `;
 
 const Register = () => {
+  const { register } = useAuth();
+  const emailRef = useRef();
+  const usernameRef = useRef();
+  const passwordRef = useRef();
+
+  const handleRegister = async () => {
+    const email = emailRef.current.value;
+    const username = usernameRef.current.value;
+    const password = passwordRef.current.value;
+    try {
+      await register(email, username, password);
+    } catch (err) {}
+  };
+
   return (
     <main>
       <Window>
         <Heading addStyle="margin-bottom: 1em;">create an account</Heading>
         <Label>email</Label>
-        <InputText addStyle="margin-bottom: 1em" />
+        <InputText ref={emailRef} addStyle="margin-bottom: 1em;" />
         <Label>username</Label>
-        <InputText addStyle="margin-bottom: 1em" />
+        <InputText ref={usernameRef} addStyle="margin-bottom: 1em;" />
         <Label>password</Label>
-        <InputPassword addStyle="margin-bottom: 1em" />
-        <Button addStyle="margin-bottom: 0.5em;">register</Button>
+        <InputPassword ref={passwordRef} addStyle="margin-bottom: 1em;" />
+        <Button addStyle="margin-bottom: 0.5em;" onClick={handleRegister}>
+          register
+        </Button>
         <span>
           <Link to="/login">already have an account?</Link>
         </span>
