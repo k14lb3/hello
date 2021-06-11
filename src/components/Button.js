@@ -11,8 +11,13 @@ const StyledButton = styled.button`
   cursor: pointer;
   transition-duration: 200ms;
   ${(props) => props.addStyle}
+
   &:hover {
     background-color: ${COLORS.WHITEY};
+  }
+
+  &:active {
+    opacity: 0.90;
   }
 `;
 
