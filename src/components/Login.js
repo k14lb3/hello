@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useAuth } from 'contexts/AuthContext';
 import { COLORS } from 'colors';
 import Heading from 'components/Heading';
 import Label from 'components/Label';
@@ -19,9 +20,9 @@ const Login = () => {
       <Window>
         <Heading addStyle="margin-bottom: 1em;">hello mah prend</Heading>
         <Label>username</Label>
-        <InputText addStyle="margin-bottom: 1em" />
+        <InputText addStyle="margin-bottom: 1em;" />
         <Label>password</Label>
-        <InputText addStyle="margin-bottom: .5em" />
+        <InputText addStyle="margin-bottom: .5em;" />
         <span>
           <Link to="/">forgot your password?</Link>
         </span>
