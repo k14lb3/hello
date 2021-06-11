@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'colors';
 
@@ -10,8 +11,8 @@ const StyledInputPassword = styled.input`
   ${(props) => props.addStyle}
 `;
 
-const InputPassword = ({ ...rest }) => {
-  return <StyledInputPassword {...rest} type="password" />;
+const InputPassword = ({ ...rest }, ref) => {
+  return <StyledInputPassword ref={ref} {...rest} type="password" />;
 };
 
-export default InputPassword;
+export default forwardRef(InputPassword);
