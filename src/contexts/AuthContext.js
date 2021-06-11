@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
       throw new Error('Password must be at least 8 - 32 characters long');
     }
     await auth.createUserWithEmailAndPassword(email, password);
-  }; //
+  };
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
