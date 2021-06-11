@@ -10,12 +10,11 @@ const StyledInputPassword = styled.input`
   font-size: inherit;
   outline: none;
   transition-duration: 200ms;
+  ${(props) => props.addStyle}
 
   &:focus {
     border-color: ${COLORS.GREEN};
   }
-
-  ${(props) => props.addStyle}
 `;
 
 const InputPassword = ({ ...rest }, ref) => {
