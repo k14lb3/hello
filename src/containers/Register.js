@@ -24,22 +24,29 @@ const Register = () => {
   const emailRef = useRef();
   const usernameRef = useRef();
   const passwordRef = useRef();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  const handleRegister = async () => {
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
     const email = emailRef.current.value;
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
+
     try {
+      setLoading(true);
       await register(email, username, password);
-    } catch (err) {}
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+    }
   };
 
   return (
     <main>
       <Window>
         <Heading addStyle="margin-bottom: 1em;">create an account</Heading>
-        <Form>
+        <Form onSubmit={handleRegister}>
           <Label>email</Label>
           <InputText
             ref={emailRef}
@@ -62,7 +69,6 @@ const Register = () => {
             hasLoader={{ loading: loading }}
             label="register"
             addStyle="margin-bottom: 0.5em;"
-            onClick={handleRegister}
           />
           <span>
             <Link to="/login">already have an account?</Link>
