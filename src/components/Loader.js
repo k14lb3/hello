@@ -45,31 +45,49 @@ const LoaderInnerAnimation = keyframes`
   }
 `;
 
-const StyledLoader = styled.span`
-  position: relative;
-  top: 50%;
+const StyledLoaderContainer = styled.div`
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  ${(props) => props.addStyle}
+`;
+
+const StyledLoader = styled.div`
   display: inline-block;
   width: ${(props) => props.width || '1.8em'};
   height: ${(props) => props.height || '1.8em'};
-  border: 4px solid ${(props) => (props.color ? props.color : COLORS.WHITE)};
+  border: 0.25em solid ${(props) => (props.color ? props.color : COLORS.WHITE)};
   animation: ${LoaderAnimation} 2s infinite ease;
   ${(props) => props.addStyle}
 `;
 
-const StyledLoaderInner = styled.span`
-  display: inline-block;
-  width: 100%;
-  vertical-align: top;
+const StyledLoaderInner = styled.div`
   background-color: ${(props) =>
     props.colorInner ? props.colorInner : COLORS.WHITE};
   animation: ${LoaderInnerAnimation} 2s infinite ease-in;
 `;
 
-const Loader = ({ color, colorInner, ...rest }) => {
+const Loader = ({ width, height, color, colorInner, inButton, addStyle }) => {
   return (
-    <StyledLoader color={color} {...rest}>
-      <StyledLoaderInner colorInner={colorInner} />
-    </StyledLoader>
+    <>
+      {inButton ? (
+        <StyledLoaderContainer addStyle={addStyle}>
+          <StyledLoader width={width} height={height} color={color}>
+            <StyledLoaderInner colorInner={colorInner} />
+          </StyledLoader>
+        </StyledLoaderContainer>
+      ) : (
+        <StyledLoader
+          width={width}
+          height={height}
+          color={color}
+          addStyle={addStyle}
+        >
+          <StyledLoaderInner colorInner={colorInner} />
+        </StyledLoader>
+      )}
+    </>
   );
 };
 
