@@ -24,6 +24,7 @@ const Register = () => {
   const emailRef = useRef();
   const usernameRef = useRef();
   const passwordRef = useRef();
+  const [loading, setLoading] = useState(false);
 
   const handleRegister = async () => {
     const email = emailRef.current.value;
@@ -57,9 +58,12 @@ const Register = () => {
             addStyle="margin-bottom: 1em;"
             autoComplete="new-password"
           />
-          <Button addStyle="margin-bottom: 0.5em;" onClick={handleRegister}>
-            register
-          </Button>
+          <Button
+            hasLoader={{ loading: loading }}
+            label="register"
+            addStyle="margin-bottom: 0.5em;"
+            onClick={handleRegister}
+          />
           <span>
             <Link to="/login">already have an account?</Link>
           </span>

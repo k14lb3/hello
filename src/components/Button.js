@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { COLORS } from 'colors';
+import Loader from 'components/Loader';
 
 const StyledButton = styled.button`
   padding: 0.5em 1.5em;
@@ -21,8 +22,29 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ children, ...rest }) => {
-  return <StyledButton {...rest}>{children}</StyledButton>;
+const StyledSpan = styled.span`
+  display: ${(props) => (props.loading ? 'none' : 'inline')};
+`;
+
+const Button = ({ hasLoader, label, ...rest }) => {
+  console.log(hasLoader);
+  return (
+    <StyledButton {...rest}>
+      {hasLoader?.loading && (
+        <Loader
+          width="1.2em"
+          height="1.2em"
+          color={COLORS.GREEN}
+          colorInner={COLORS.GREEN}
+        />
+      )}
+      {hasLoader ? (
+        <StyledSpan loading={hasLoader.loading}>{label}</StyledSpan>
+      ) : (
+        label
+      )}
+    </StyledButton>
+  );
 };
 
 export default Button;

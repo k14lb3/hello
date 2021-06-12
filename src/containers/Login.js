@@ -25,7 +25,10 @@ const Login = () => {
         <span>
           <Link to="/">forgot your password?</Link>
         </span>
-        <Button addStyle="margin-top: 1em; margin-bottom: 0.5em;">login</Button>
+        <Button
+          addStyle="margin-top: 1em; margin-bottom: 0.5em;"
+          label="login"
+        />
         <span>
           need an account? <Link to="/register">register</Link>
         </span>
