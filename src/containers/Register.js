@@ -24,7 +24,7 @@ const Register = () => {
   const emailRef = useRef();
   const usernameRef = useRef();
   const passwordRef = useRef();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handleRegister = async (e) => {
     e.preventDefault();
