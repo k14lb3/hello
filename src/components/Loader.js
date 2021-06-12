@@ -46,20 +46,20 @@ const LoaderInnerAnimation = keyframes`
 `;
 
 const StyledLoader = styled.span`
-  display: inline-block;
-  width: 1.8em;
-  height: 1.8em;
   position: relative;
-  border: 4px solid ${(props) => (props.color ? props.color : COLORS.WHITE)};
   top: 50%;
+  display: inline-block;
+  width: ${(props) => props.width || '1.8em'};
+  height: ${(props) => props.height || '1.8em'};
+  border: 4px solid ${(props) => (props.color ? props.color : COLORS.WHITE)};
   animation: ${LoaderAnimation} 2s infinite ease;
   ${(props) => props.addStyle}
 `;
 
 const StyledLoaderInner = styled.span`
-  vertical-align: top;
   display: inline-block;
   width: 100%;
+  vertical-align: top;
   background-color: ${(props) =>
     props.colorInner ? props.colorInner : COLORS.WHITE};
   animation: ${LoaderInnerAnimation} 2s infinite ease-in;
