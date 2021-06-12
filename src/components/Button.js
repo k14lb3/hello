@@ -17,7 +17,7 @@ const StyledButton = styled.button`
   }
 
   &:active {
-    opacity: 0.90;
+    opacity: 0.9;
   }
 `;
 
