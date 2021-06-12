@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext, createContext } from 'react';
-import { auth, db } from 'firebase.js';
+import { auth } from 'firebase.js';
+import { REF } from 'refs';
 
 const AuthContext = createContext();
 
@@ -19,7 +20,9 @@ const AuthProvider = ({ children }) => {
     if (password.length < 8 || password.length > 32) {
       throw new Error('Password must be at least 8 - 32 characters long');
     }
-    await auth.createUserWithEmailAndPassword(email, password);
+    const id = (await auth.createUserWithEmailAndPassword(email, password)).user
+      .uid;
+    await REF.USER({ user_uid: id }).set({ username: username });
   };
 
   useEffect(() => {
