@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import { COLORS } from 'colors';
 import Heading from 'components/Heading';
@@ -14,6 +15,8 @@ const Window = styled.div`
 `;
 
 const Login = () => {
+  const [loading, setLoading] = useState(false);
+
   return (
     <main>
       <Window>
@@ -26,6 +29,7 @@ const Login = () => {
           <Link to="/">forgot your password?</Link>
         </span>
         <Button
+          hasLoader={{ loading: loading }}
           addStyle="margin-top: 1em; margin-bottom: 0.5em;"
           label="login"
         />
