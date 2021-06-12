@@ -24,7 +24,7 @@ const StyledButton = styled.button`
 `;
 
 const StyledSpan = styled.span`
-  display: ${(props) => (props.loading ? 'none' : 'inline')};
+  opacity: ${(props) => props.weird && '0'};
 `;
 
 const Button = ({ hasLoader, label, ...rest }) => {
@@ -32,14 +32,14 @@ const Button = ({ hasLoader, label, ...rest }) => {
     <StyledButton hasLoader={hasLoader} {...rest}>
       {hasLoader?.loading && (
         <Loader
-          width="1.2em"
-          height="1.2em"
-          color={COLORS.GREEN}
+          inButton
+          size={{ width: '1em', height: '1em' }}
+          colorOuter={COLORS.GREEN}
           colorInner={COLORS.GREEN}
         />
       )}
       {hasLoader ? (
-        <StyledSpan loading={hasLoader.loading}>{label}</StyledSpan>
+        <StyledSpan weird={hasLoader.loading}>{label}</StyledSpan>
       ) : (
         label
       )}

@@ -50,14 +50,14 @@ const StyledLoaderContainer = styled.div`
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  ${(props) => props.addStyle}
 `;
 
 const StyledLoader = styled.div`
   display: inline-block;
-  width: ${(props) => props.width || '1.8em'};
-  height: ${(props) => props.height || '1.8em'};
-  border: 0.25em solid ${(props) => (props.color ? props.color : COLORS.WHITE)};
+  width: ${(props) => props.size?.width || '1.8em'};
+  height: ${(props) => props.size?.height || '1.8em'};
+  border: 0.25em solid
+    ${(props) => (props.colorOuter ? props.colorOuter : COLORS.WHITE)};
   animation: ${LoaderAnimation} 2s infinite ease;
   ${(props) => props.addStyle}
 `;
@@ -68,22 +68,17 @@ const StyledLoaderInner = styled.div`
   animation: ${LoaderInnerAnimation} 2s infinite ease-in;
 `;
 
-const Loader = ({ width, height, color, colorInner, inButton, addStyle }) => {
+const Loader = ({ size, colorOuter, colorInner, inButton, addStyle }) => {
   return (
     <>
       {inButton ? (
-        <StyledLoaderContainer addStyle={addStyle}>
-          <StyledLoader width={width} height={height} color={color}>
+        <StyledLoaderContainer>
+          <StyledLoader size={size} colorOuter={colorOuter}>
             <StyledLoaderInner colorInner={colorInner} />
           </StyledLoader>
         </StyledLoaderContainer>
       ) : (
-        <StyledLoader
-          width={width}
-          height={height}
-          color={color}
-          addStyle={addStyle}
-        >
+        <StyledLoader size={size} color={colorOuter} addStyle={addStyle}>
           <StyledLoaderInner colorInner={colorInner} />
         </StyledLoader>
       )}
