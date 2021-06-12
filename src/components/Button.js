@@ -3,6 +3,7 @@ import { COLORS } from 'colors';
 import Loader from 'components/Loader';
 
 const StyledButton = styled.button`
+  position: ${(props) => props.hasLoader && 'relative'};
   padding: 0.5em 1.5em;
   background-color: ${(props) =>
     props.outlined ? 'transparent' : COLORS.WHITE};
@@ -27,9 +28,8 @@ const StyledSpan = styled.span`
 `;
 
 const Button = ({ hasLoader, label, ...rest }) => {
-  console.log(hasLoader);
   return (
-    <StyledButton {...rest}>
+    <StyledButton hasLoader={hasLoader} {...rest}>
       {hasLoader?.loading && (
         <Loader
           width="1.2em"
